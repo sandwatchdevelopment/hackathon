@@ -1,0 +1,9 @@
+[tool.poetry]
+name = "search"
+version = "0.1.0"
+description = "general search lambda"
+readme = "README.md"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,60 @@
+[tool.poetry]
+name = "lambda-functions-root"
+version = "0.1.0"
+description = "Root project for all lambda functions"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+flake8 = "^7.1.1"
+black = "^24.8.0"
+pydantic = "^2.9.1"
+aws-lambda-powertools = "^2.43.1"
+aws-xray-sdk = "^2.14.0"
+psycopg2-binary = "^2.9.9"
+
+
+[tool.poetry.group.auth.dependencies]
+base58 = "^2.1.1"
+solana = "^0.34.3"
+pyjwt = "^2.3.0"
+pynacl = "^1.5.0"
+
+[tool.poetry.group.authorizer.dependencies]
+pyjwt = "^2.3.0"
+
+[tool.poetry.group.connections.dependencies]
+
+[tool.poetry.group.popcorn.dependencies]
+pytest = "^8.3.3"
+
+[tool.poetry.group.search.dependencies]
+
+[tool.poetry.group.seat.dependencies]
+psycopg2-binary = "^2.9.9"
+pytest = "^8.3.3"
+solders = "^0.21.0"
+solana = "^0.34.3"
+
+[tool.poetry.group.user.dependencies]
+
+[tool.black]
+line-length = 88
+target-version = ['py312']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
